@@ -1,0 +1,171 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Homepage</title>
+
+    <style>
+        /* -------------------
+           GLOBAL APPLE STYLE
+        ------------------- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                         Roboto, Helvetica, Arial, sans-serif;
+            background-color: #ffffff;
+            color: #1d1d1f;
+        }
+
+        /* -------------------
+           HEADER / NAVBAR
+        ------------------- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 40px;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        header img {
+            width: 22px;
+        }
+
+        header h1 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+
+        header ul {
+            display: flex;
+            list-style: none;
+            gap: 24px;
+        }
+
+        header ul a {
+            text-decoration: none;
+            color: #1d1d1f;
+            font-size: 14px;
+        }
+
+        header ul a:hover {
+            opacity: 0.7;
+        }
+
+        /* -------------------
+           HERO SECTION
+        ------------------- */
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+
+             display: flex;
+            flex-direction: column;
+            align-items: center;  
+        }
+
+        .hero h3 {
+            font-size: 20px;
+            font-weight: 400;
+            color: #6e6e73;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+
+        .hero img {
+            width: 100%;
+            max-width: 700px;
+            margin-bottom: 40px;
+        }
+
+        /* -------------------
+           APPLE BUTTON
+        ------------------- */
+        button {
+            background-color: #0071e3;
+            color: #ffffff;
+            border: none;
+            padding: 12px 26px;
+            font-size: 16px;
+            border-radius: 980px;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #0077ed;
+        }
+
+        /* -------------------
+           MOBILE RESPONSIVE
+        ------------------- */
+        @media (max-width: 768px) {
+            header {
+                padding: 12px 20px;
+            }
+
+            header ul {
+                gap: 14px;
+            }
+
+            header h1 {
+                display: none; /* Apple hides text on mobile */
+            }
+
+            .hero {
+                padding: 60px 16px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero h3 {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div style="display:flex; align-items:center;">
+        <img src="{% static 'images/apple-logo.png' %}">
+        <h1>Apple</h1>
+    </div>
+
+    <ul>
+        <a href="{% url 'login' %}"><li>Login</li></a>
+        <a href="{% url 'account' %}"><li>Account</li></a>
+    </ul>
+</header>
+
+<section class="hero">
+    <h3>Apple’s New</h3>
+    <h1>VISION PRO.</h1>
+
+    <img src="{% static 'images/xr.png' %}">
+
+    <a href="{% url 'order' %}">
+        <button type="submit">Order</button>
+    </a>
+</section>
+
+</body>
+</html>
